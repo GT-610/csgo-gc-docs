@@ -1,0 +1,138 @@
+# RCON
+
+csgo_gc exposes an optional Source RCON-compatible control port for the local ClientGC. It is intended for scripting, debugging, GUI inventory editors, and quick live inventory tests.
+
+RCON is disabled by default.
+
+## Enable RCON
+
+Add or edit the `rcon` block in `csgo_gc/config.txt`:
+
+```text
+"rcon"
+{
+    "enabled"      "1"
+    "bind_address" "127.0.0.1"
+    "port"         "37016"
+    "password"     ""
+}
+```
+
+Restart the game after changing this file.
+
+## Security
+
+Keep RCON on `127.0.0.1` unless you have added your own network protection. RCON can mutate local inventory state.
+
+An empty configured password intentionally accepts any supplied Source RCON password for compatibility with Source RCON clients.
+
+## Protocol
+
+The listener speaks the Source RCON binary protocol:
+
+- Little-endian size-prefixed packets.
+- `SERVERDATA_AUTH` for authentication.
+- `SERVERDATA_EXECCOMMAND` for commands.
+- `SERVERDATA_RESPONSE_VALUE` and `SERVERDATA_AUTH_RESPONSE` for responses.
+
+Raw newline text mode is not supported.
+
+## Basic checks
+
+```powershell
+Test-NetConnection 127.0.0.1 -Port 37016
+```
+
+With a Source RCON client:
+
+```powershell
+rcon -a 127.0.0.1:37016 -p 1 ping
+```
+
+Expected response:
+
+```text
+OK pong
+```
+
+## Response format
+
+Responses are plain text inside Source RCON response packets:
+
+```text
+OK <message>
+ERR <message>
+```
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `help` | Lists available commands. |
+| `ping` | Returns `OK pong`. |
+| `status` | Shows RCON and ClientGC state. |
+| `clients` | Lists the controllable local ClientGC. |
+| `give_item` | Creates inventory items and sends live create updates. |
+| `remove_item` | Removes an item and sends a live destroy update. |
+| `refresh_inventory` | Resends the full inventory cache subscription. |
+
+## Create items
+
+```text
+give_item <defindex> [count] [key=value...]
+```
+
+Examples:
+
+```text
+give_item 7
+give_item 7 5
+give_item 7 paint=44
+give_item 7 paint=44 wear=0.12 seed=123 stattrak=5
+give_item 7 paint=44 name="RCON Test"
+give_item 1314 music=3 stattrak=10
+give_item 7 paint=44 sticker0=12 sticker0_wear=0
+```
+
+Supported parameters include:
+
+| Parameter | Notes |
+| --- | --- |
+| `level` | Item level override. |
+| `quality` | Item quality override. |
+| `rarity` | Item rarity override. |
+| `name` | Custom item name. Quote values containing spaces. |
+| `paint` | Paint kit defindex. |
+| `seed` | Paint seed. |
+| `wear` | Paint wear from `0.0` to `1.0`. |
+| `stattrak` | Kill count. `stattrak=1` creates StatTrak with zero kills. |
+| `music` | Music definition ID. Requires music kit defindex `1314`. |
+| `spray_color` | Graffiti tint ID. |
+| `spray_remaining` | Remaining graffiti uses. |
+| `sticker0` through `sticker5` | Sticker kit defindex. |
+| `stickerN_wear` | Sticker wear from `0.0` to `1.0`. |
+| `stickerN_scale` | Sticker scale. |
+| `stickerN_rotation` | Sticker rotation. |
+
+`count` is optional and must be between `1` and `100`.
+
+## Remove items
+
+```text
+remove_item <itemid>
+```
+
+## Common errors
+
+```text
+ERR no client gc
+ERR unknown defindex
+ERR unknown paint
+ERR unknown music
+ERR unknown sticker
+ERR item not found
+ERR usage: give_item <defindex> [count] [key=value...]
+ERR invalid parameter wear
+```
+
+`ERR no client gc` means the listener is running, but the local ClientGC has not registered yet or has already shut down.
