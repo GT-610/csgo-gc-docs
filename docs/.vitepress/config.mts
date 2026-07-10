@@ -52,11 +52,44 @@ export default defineConfig({
               { text: '\u8d21\u732e', link: '/zh/developer/contributing' }
             ]
           }
-        ]
+        ],
+        search: {
+          provider: 'local',
+          options: {
+            locales: {
+              zh: {
+                translations: {
+                  button: {
+                    buttonText: '\u641c\u7d22',
+                    buttonAriaLabel: '\u641c\u7d22'
+                  },
+                  modal: {
+                    displayDetails: '\u663e\u793a\u8be6\u60c5',
+                    resetButtonTitle: '\u91cd\u7f6e\u641c\u7d22',
+                    backButtonTitle: '\u5173\u95ed\u641c\u7d22',
+                    noResultsText: '\u65e0\u7ed3\u679c',
+                    footer: {
+                      selectText: '\u9009\u62e9',
+                      selectKeyAriaLabel: '\u56de\u8f66',
+                      navigateText: '\u5207\u6362',
+                      navigateUpKeyAriaLabel: '\u5411\u4e0a',
+                      navigateDownKeyAriaLabel: '\u5411\u4e0b',
+                      closeText: '\u5173\u95ed',
+                      closeKeyAriaLabel: 'Esc'
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'User Guide', link: '/user/' },
