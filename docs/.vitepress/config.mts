@@ -1,9 +1,61 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  lang: 'en-US',
   title: 'CSGO GC Docs',
   description: 'User and developer documentation for csgo_gc',
   cleanUrls: true,
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en-US',
+      title: 'CSGO GC Docs',
+      description: 'User and developer documentation for csgo_gc'
+    },
+    zh: {
+      label: '\u7b80\u4f53\u4e2d\u6587',
+      lang: 'zh-CN',
+      title: 'CSGO GC \u6587\u6863',
+      description: 'csgo_gc \u7684\u7528\u6237\u548c\u5f00\u53d1\u8005\u6587\u6863',
+      themeConfig: {
+        nav: [
+          { text: '\u9996\u9875', link: '/zh/' },
+          { text: '\u7528\u6237\u6307\u5357', link: '/zh/user/' },
+          { text: '\u5f00\u53d1\u8005\u6307\u5357', link: '/zh/developer/' }
+        ],
+        sidebar: [
+          {
+            text: '\u6982\u89c8',
+            items: [
+              { text: '\u4ecb\u7ecd', link: '/zh/' },
+              { text: '\u9879\u76ee\u72b6\u6001', link: '/zh/status' }
+            ]
+          },
+          {
+            text: '\u7528\u6237\u6307\u5357',
+            items: [
+              { text: '\u4ece\u8fd9\u91cc\u5f00\u59cb', link: '/zh/user/' },
+              { text: '\u5b89\u88c5', link: '/zh/user/installation' },
+              { text: '\u914d\u7f6e', link: '/zh/user/configuration' },
+              { text: '\u5e93\u5b58', link: '/zh/user/inventory' },
+              { text: 'RCON', link: '/zh/user/rcon' },
+              { text: '\u670d\u52a1\u5668\u548c\u5927\u5385', link: '/zh/user/servers' }
+            ]
+          },
+          {
+            text: '\u5f00\u53d1\u8005\u6307\u5357',
+            items: [
+              { text: '\u4ece\u8fd9\u91cc\u5f00\u59cb', link: '/zh/developer/' },
+              { text: '\u6784\u5efa', link: '/zh/developer/building' },
+              { text: '\u67b6\u6784', link: '/zh/developer/architecture' },
+              { text: '\u6e90\u7801\u5730\u56fe', link: '/zh/developer/source-map' },
+              { text: '\u8d21\u732e', link: '/zh/developer/contributing' }
+            ]
+          }
+        ]
+      }
+    }
+  },
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
