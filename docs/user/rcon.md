@@ -136,3 +136,9 @@ ERR invalid parameter wear
 ```
 
 `ERR no client gc` means the listener is running, but the local ClientGC has not registered yet or has already shut down.
+
+## GUI editing
+
+GUI editors that currently support RCON editing:
+
+- [GT-610/csgo-gc-inventory-editor](https://github.com/GT-610/csgo-gc-inventory-editor)

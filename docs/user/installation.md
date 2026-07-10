@@ -1,5 +1,15 @@
 # Installation
 
+::: danger
+Because this program redirects the game's GC traffic locally through hooks, some antivirus software may falsely report it as malware such as ShellLoader or Trojan.
+
+This project is fully free and open source. As long as you make sure your download source is [our GitHub Releases page](https://github.com/GT-610/csgo-gc/releases), the program is safe.
+
+If you are unsure, you can inspect the codebase yourself, ask an AI whether the codebase is safe, or build it yourself.
+
+**Do not** download this project from any other source.
+:::
+
 ## Requirements
 
 - A CS:GO legacy install from Steam.
@@ -8,7 +18,7 @@
 
 ## Install CS:GO legacy
 
-Install the legacy CS:GO app from Steam:
+Install the legacy CS:GO app from the Steam store:
 
 ```text
 steam://install/4465480

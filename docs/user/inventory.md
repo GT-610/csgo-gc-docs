@@ -8,6 +8,10 @@ csgo_gc/inventory.txt
 
 The file uses Valve-style KeyValues. It is powerful, but easy to break by hand. Keep backups before editing.
 
+::: tip
+Using a GUI editor is recommended for inventory editing. For available GUI editors, see [mikkokko/csgo_gc Issue #82](https://github.com/mikkokko/csgo_gc/issues/82).
+:::
+
 ## What the inventory supports
 
 The current implementation supports:
@@ -52,6 +56,10 @@ The basic structure is:
 For live changes while the game is running, use the local RCON interface. It can create and remove items and then send live GC updates to the game.
 
 Use RCON for tools, scripts, and quick tests. Use offline editing for large structural changes.
+
+GUI editors that currently support RCON editing:
+
+- [GT-610/csgo-gc-inventory-editor](https://github.com/GT-610/csgo-gc-inventory-editor)
 
 ## Store data
 

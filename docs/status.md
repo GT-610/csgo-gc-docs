@@ -1,9 +1,5 @@
 # Project Status
 
-This page summarizes the current state reflected by the target project in `.vscode/references/csgo-gc`.
-
-## Current focus
-
 csgo_gc is currently a practical local GC replacement for legacy CS:GO rather than a complete clone of Valve's backend. The implemented surface is strongest around inventory, item customization, local control, lobbies, and dedicated server interoperability.
 
 ## Implemented
@@ -20,10 +16,9 @@ csgo_gc is currently a practical local GC replacement for legacy CS:GO rather th
 
 ## Known limits
 
-- The project is still marked incomplete upstream.
 - Edge-case inventory validation still needs polish.
 - Live inventory editing tooling is planned, but the core project currently exposes RCON for scripts and external tools.
-- Matchmaking is not planned.
+- Matchmaking is not currently planned.
 - The project still wants a recent full CS:GO Item Schema.
 
 ## Safety expectations

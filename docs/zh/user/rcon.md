@@ -136,3 +136,8 @@ ERR invalid parameter wear
 ```
 
 `ERR no client gc` 表示监听器正在运行，但本地 ClientGC 尚未注册，或已经关闭。
+
+## GUI 编辑
+
+目前支持 RCON 编辑的 GUI 编辑器有：
+- [GT-610/csgo-gc-inventory-editor](https://github.com/GT-610/csgo-gc-inventory-editor)

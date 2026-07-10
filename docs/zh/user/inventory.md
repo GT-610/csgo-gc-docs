@@ -8,6 +8,10 @@ csgo_gc/inventory.txt
 
 该文件使用 Valve 风格的 KeyValues。它很强大，但手动编辑时也很容易写坏。编辑前请保留备份。
 
+::: tip
+推荐使用 GUI 编辑器编辑库存。可用的 GUI 编辑器请查阅 [mikkokko/csgo_gc Issue #82](https://github.com/mikkokko/csgo_gc/issues/82)。
+:::
+
 ## 当前库存支持
 
 当前实现支持：
@@ -52,6 +56,9 @@ csgo_gc/inventory.txt
 如果需要在游戏运行时修改，请使用本地 RCON 接口。它可以创建和移除物品，并向游戏发送实时 GC 更新。
 
 工具、脚本和快速测试适合使用 RCON。大型结构调整更适合离线编辑。
+
+目前支持 RCON 编辑的 GUI 编辑器有：
+- [GT-610/csgo-gc-inventory-editor](https://github.com/GT-610/csgo-gc-inventory-editor)
 
 ## 商店数据
 
