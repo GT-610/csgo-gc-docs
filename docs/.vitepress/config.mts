@@ -5,6 +5,9 @@ export default defineConfig({
   title: 'CSGO GC Docs',
   description: 'User and developer documentation for csgo_gc',
   cleanUrls: true,
+  head: [
+    ['script', { src: 'https://events.vercount.one/js', defer: '' }]
+  ],
   locales: {
     root: {
       label: 'English',
