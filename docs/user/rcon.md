@@ -1,6 +1,12 @@
 # RCON
 
-csgo_gc exposes an optional Source RCON-compatible control port for the local ClientGC. It is intended for scripting, debugging, GUI inventory editors, and quick live inventory tests.
+CSGO-GC exposes an optional Source RCON-compatible control port for the local ClientGC. It is intended for scripting, debugging, GUI inventory editors, and quick live inventory tests. More useful RCON commands for servers may be added later.
+
+![RCON overview](images/rcon.png)
+
+::: warning
+The GC RCON and the Dedicated Server RCON on port `27016` are **independent** of each other.
+:::
 
 RCON is disabled by default.
 
@@ -11,20 +17,20 @@ Add or edit the `rcon` block in `csgo_gc/config.txt`:
 ```text
 "rcon"
 {
-    "enabled"      "1"
-    "bind_address" "127.0.0.1"
-    "port"         "37016"
-    "password"     ""
+    "enabled"      "1" // 1 enables RCON, 0 disables it
+    "bind_address" "127.0.0.1" // RCON listen address
+    "port"         "37016" // RCON listen port
+    "password"     "" // Password
 }
 ```
 
 Restart the game after changing this file.
 
-## Security
+::: danger Security
+Keep RCON on `127.0.0.1` unless you have added your own network protection. RCON can mutate your local inventory state.
 
-Keep RCON on `127.0.0.1` unless you have added your own network protection. RCON can mutate local inventory state.
-
-An empty configured password intentionally accepts any supplied Source RCON password for compatibility with Source RCON clients.
+If the configured password is empty, **any supplied password will be accepted** for compatibility with Source RCON clients.
+:::
 
 ## Protocol
 

@@ -1,10 +1,6 @@
 # Inventory
 
-csgo_gc stores the local inventory in:
-
-```text
-csgo_gc/inventory.txt
-```
+csgo_gc stores the local inventory in `csgo_gc/inventory.txt`.
 
 The file uses Valve-style KeyValues. It is powerful, but easy to break by hand. Keep backups before editing.
 
@@ -17,15 +13,15 @@ Using a GUI editor is recommended for inventory editing. For available GUI edito
 The current implementation supports:
 
 - Weapons, knives, cosmetics, stickers, patches, graffiti, music kits, and Storage Units.
-- Equipped state and loadout updates.
+- Equipped state and equipment updates.
 - Paint kits, paint seed, wear, rarity, quality, item level, and custom names.
 - StatTrak weapon and music kit counters.
-- Storage Unit deposit and withdraw flows.
+- Inventory Storage Component deposit and withdraw flows.
 - Trade-up inputs and generated outputs.
 
 ## Offline editing
 
-Offline editing means changing `inventory.txt` while the game is closed, then restarting CS:GO. This is still the safest way to make large manual changes.
+Offline editing means changing `inventory.txt` while the game is closed, then restarting CS:GO. This is still the most convenient way to make large manual changes.
 
 The basic structure is:
 
@@ -49,13 +45,19 @@ The basic structure is:
 }
 ```
 
-`default_equips` stores fallback loadout choices by class and slot.
+`default_equips` stores fallback equipment choices by class and slot.
+
+## Inventory format checks
+
+![Example inventory check log at GC startup](images/item-check.png)
+
+At startup, the GC checks the inventory format and reports problems in the console. These problems do not prevent you from playing or using the inventory, but adjusting the data based on the logs is still recommended.
 
 ## Live editing
 
-For live changes while the game is running, use the local RCON interface. It can create and remove items and then send live GC updates to the game.
+For live changes while the game is running, use the local RCON interface. It can create and remove items while the game is open and then send live GC updates to the game.
 
-Use RCON for tools, scripts, and quick tests. Use offline editing for large structural changes.
+Use RCON for tools, scripts, and quick tests.
 
 GUI editors that currently support RCON editing:
 

@@ -2,6 +2,20 @@
 
 csgo_gc is still incomplete, so contributions are most useful when they improve correctness, diagnostics, reproducibility, or documentation.
 
+## Contributing with generative AI
+
+We do not reject the use of generative AI, but **you alone** are responsible for the code you submit. We **do not accept commits signed off in the name of an AI**.
+
+The following is not allowed, and we will reject a pull request containing it even if the pull request includes a real bug fix:
+
+```text
+signed off by Claude
+```
+
+If you use generative AI during development, submit the work **under your own name**. We do not care how your code was written, but you are responsible for any problems or risks in code written with generative AI.
+
+Before starting development, we recommend asking the generative AI tool to read the repository's `AGENTS.md` files to understand the project. Most agents read `AGENTS.md` automatically, but explicitly requesting it is still recommended.
+
 ## Good contribution areas
 
 - Edge-case validation for inventory operations.

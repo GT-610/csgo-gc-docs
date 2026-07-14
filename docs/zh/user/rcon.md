@@ -1,6 +1,12 @@
 # RCON
 
-csgo_gc 为本地 ClientGC 暴露了一个可选的 Source RCON 兼容控制端口。它面向脚本、调试、GUI 库存编辑器和快速实时库存测试。
+CSGO-GC 为本地 ClientGC 暴露了一个可选的 Source RCON 兼容控制端口。它面向脚本、调试、GUI 库存编辑器和快速实时库存测试。后期可能会为服务器添加更多实用 RCON 命令。
+
+![alt text](../../user/images/rcon.png)
+
+::: warning
+GC 的 RCON 和专用服务器的 RCON（27016 端口） **相互独立**。
+:::
 
 RCON 默认关闭。
 
@@ -11,20 +17,20 @@ RCON 默认关闭。
 ```text
 "rcon"
 {
-    "enabled"      "1"
-    "bind_address" "127.0.0.1"
-    "port"         "37016"
-    "password"     ""
+    "enabled"      "1" // 1 为启用，0 为禁用
+    "bind_address" "127.0.0.1" // RCON 监听地址
+    "port"         "37016" // RCON 监听端口
+    "password"     "" // 密码
 }
 ```
 
 修改后请重启游戏。
 
-## 安全
+::: danger 安全
+请让 RCON 保持在 `127.0.0.1`，除非你已经添加自己的网络保护。RCON 可以修改您的本地库存状态。
 
-请让 RCON 保持在 `127.0.0.1`，除非你已经添加自己的网络保护。RCON 可以修改本地库存状态。
-
-如果配置中的密码为空，出于 Source RCON 客户端兼容性考虑，任何传入密码都会通过认证。
+如果配置中的密码为空，出于 Source RCON 客户端兼容性考虑，**任何传入密码都会通过认证**。
+:::
 
 ## 协议
 

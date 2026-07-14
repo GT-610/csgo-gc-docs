@@ -12,15 +12,15 @@ csgo_gc/config.txt
 
 `ranks` 块控制可见的段位和胜场数据：
 
-```text
+```vdf
 "ranks"
 {
-    "competitive_rank" "18"
-    "competitive_wins" "666"
-    "wingman_rank"     "18"
-    "wingman_wins"     "777"
-    "dangerzone_rank"  "15"
-    "dangerzone_wins"  "888"
+    "competitive_rank" "18" // 竞技模式段位，范围是 [1, 18]
+    "competitive_wins" "666" // 竞技模式胜利数
+    "wingman_rank"     "18" // 搭档模式段位，范围是 [1, 18]
+    "wingman_wins"     "777" // 搭档模式胜利数
+    "dangerzone_rank"  "15" // 头号特训段位，范围是 [1, 15]
+    "dangerzone_wins"  "888" // 头号特训胜利数
 }
 ```
 
@@ -28,54 +28,33 @@ csgo_gc/config.txt
 
 | 选项 | 用途 |
 | --- | --- |
-| `vac_banned` | 控制本地 GC 展示的 VAC 状态标记。 |
-| `cmd_friendly` | 友善称赞数量。 |
-| `cmd_teaching` | 教导称赞数量。 |
-| `cmd_leader` | 指挥称赞数量。 |
-| `player_level` | 资料等级。 |
-| `player_cur_xp` | 当前资料 XP。 |
+| `vac_banned` | 游戏内是否显示“已被 VAC 封禁”横幅，和实际是否封禁无关，也不会影响你实际 VAC 状态 |
+| `cmd_friendly` | 因待人友善而获得的称赞数 |
+| `cmd_teaching` | 因诲人不倦而获得的称赞数 |
+| `cmd_leader` | 因领导团队而获得的称赞数 |
+| `player_level` | 玩家等级 |
+| `player_cur_xp` | 当前经验值 |
 
 ## 物品行为
 
-`destroy_used_items` 控制消耗品使用后是否被移除：
-
-```text
-"destroy_used_items" "1"
-```
+`destroy_used_items` 控制消耗品使用后是否被移除，1 为“是”，0 为“否”，默认为 1。如果为“否”，开箱时不消耗箱子和钥匙，汰换也不会消耗原有物品等。
 
 `rarity_weights` 块控制开箱类流程中的加权选择。示例配置使用类似 Valve 的权重。
 
 ## Steam 和服务器浏览器
 
-`appid_override` 控制游戏使用的 app ID。默认值为 `4465480`，也就是旧版 CS:GO 的 app ID。
+`appid_override` 控制游戏使用的 app ID。默认值为 `4465480`，也就是 CS:GO 独立上架版本的 app ID。
 
-```text
-"appid_override" "4465480"
-```
+当然，你也可以修改为 `730` 以让 CS:GO 游戏认为自己仍在原 ID（现为 CS2）运行。这可能允许你使用创意工坊订阅，但其他人会看到你游玩的是 CS2。
 
-`show_csgo_gc_servers_only` 控制服务器浏览器过滤：
 
-```text
-"show_csgo_gc_servers_only" "1"
-```
+`show_csgo_gc_servers_only` 控制服务器浏览器过滤，1 为“启用”，0 为“禁用”。
 
-启用后，服务器浏览器默认只显示带有 csgo_gc 标记的服务器。
+启用后，服务器浏览器默认只显示带有 `csgo_gc` 标记的服务器。所有支持 CSGO-GC 的服务器都带有 `csgo_gc` 标签。如果一个服务器没有此标签，你的库存很可能无法使用，表现为你的库存不展示也不可被其他玩家看到，可以在购买菜单看到自己的库存，但购买结果仍然是默认装备而不是你设定的装备。
 
 ## RCON
 
-RCON 默认关闭：
-
-```text
-"rcon"
-{
-    "enabled"      "0"
-    "bind_address" "127.0.0.1"
-    "port"         "37016"
-    "password"     ""
-}
-```
-
-除非你理解安全影响，否则请保持 `bind_address` 为 `127.0.0.1`。如果配置中的密码为空，任何传入的 Source RCON 密码都会被接受。
+请参阅 [RCON 章节](rcon)。
 
 ## 日志
 

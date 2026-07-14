@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+﻿import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'en-US',
@@ -31,14 +31,15 @@ export default defineConfig({
             text: '\u6982\u89c8',
             items: [
               { text: '\u4ecb\u7ecd', link: '/zh/' },
-              { text: '\u9879\u76ee\u72b6\u6001', link: '/zh/status' }
+
             ]
           },
           {
             text: '\u7528\u6237\u6307\u5357',
             items: [
               { text: '\u4ece\u8fd9\u91cc\u5f00\u59cb', link: '/zh/user/' },
-              { text: '\u5b89\u88c5', link: '/zh/user/installation' },
+              { text: '\u5ba2\u6237\u7aef\u5b89\u88c5', link: '/zh/user/client_installation' },
+              { text: '\u670d\u52a1\u5668\u5b89\u88c5', link: '/zh/user/server_installation' },
               { text: '\u914d\u7f6e', link: '/zh/user/configuration' },
               { text: '\u5e93\u5b58', link: '/zh/user/inventory' },
               { text: 'RCON', link: '/zh/user/rcon' },
@@ -103,14 +104,15 @@ export default defineConfig({
         text: 'Overview',
         items: [
           { text: 'Introduction', link: '/' },
-          { text: 'Project Status', link: '/status' }
+
         ]
       },
       {
         text: 'User Guide',
         items: [
           { text: 'Start Here', link: '/user/' },
-          { text: 'Installation', link: '/user/installation' },
+          { text: 'Client Installation', link: '/user/client_installation' },
+          { text: 'Server Installation', link: '/user/server_installation' },
           { text: 'Configuration', link: '/user/configuration' },
           { text: 'Inventory', link: '/user/inventory' },
           { text: 'RCON', link: '/user/rcon' },
