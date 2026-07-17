@@ -1,4 +1,4 @@
-# Configuration
+﻿# Configuration
 
 csgo_gc reads configuration from:
 
@@ -53,7 +53,7 @@ When enabled, the server browser only shows servers tagged with `csgo_gc` by def
 
 ## RCON
 
-See the [RCON section](rcon).
+See the [RCON section](/user/rcon).
 
 ## Logging
 
@@ -64,3 +64,4 @@ See the [RCON section](rcon).
 | `0` | No logging. |
 | `1` | Log to the in-game console. |
 | `2` | Log to the in-game console and `gc_log.txt`. |
+

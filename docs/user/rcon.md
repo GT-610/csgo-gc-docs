@@ -1,4 +1,4 @@
-# RCON
+﻿# RCON
 
 CSGO-GC exposes an optional Source RCON-compatible control port for the local ClientGC. It is intended for scripting, debugging, GUI inventory editors, and quick live inventory tests. More useful RCON commands for servers may be added later.
 
@@ -159,4 +159,4 @@ GUI editors that currently support RCON editing:
 
 ## Souvenir parameters
 
-`give_item` also accepts `tournament_event`, `tournament_stage`, `tournament_team0`, `tournament_team1`, and `tournament_mvp`. See [Souvenir Packages](souvenirs) for the attribute mapping and historical sticker formats.
+`give_item` also accepts `tournament_event`, `tournament_stage`, `tournament_team0`, `tournament_team1`, and `tournament_mvp`. See [Souvenir Packages](/user/souvenirs) for the attribute mapping and historical sticker formats.

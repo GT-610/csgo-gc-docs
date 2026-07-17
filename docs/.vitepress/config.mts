@@ -16,45 +16,46 @@ export default defineConfig({
       description: 'User and developer documentation for csgo_gc'
     },
     zh: {
-      label: '\u7b80\u4f53\u4e2d\u6587',
+      label: '简体中文',
       lang: 'zh-CN',
-      title: 'CSGO GC \u6587\u6863',
-      description: 'csgo_gc \u7684\u7528\u6237\u548c\u5f00\u53d1\u8005\u6587\u6863',
+      title: 'CSGO GC 文档',
+      description: 'csgo_gc 的用户和开发者文档',
       themeConfig: {
         nav: [
-          { text: '\u9996\u9875', link: '/zh/' },
-          { text: '\u7528\u6237\u6307\u5357', link: '/zh/user/' },
-          { text: '\u5f00\u53d1\u8005\u6307\u5357', link: '/zh/developer/' }
+          { text: '首页', link: '/zh/' },
+          { text: '用户指南', link: '/zh/user/' },
+          { text: '开发者指南', link: '/zh/developer/' }
         ],
         sidebar: [
           {
-            text: '\u6982\u89c8',
+            text: '概览',
             items: [
-              { text: '\u4ecb\u7ecd', link: '/zh/' },
+              { text: '介绍', link: '/zh/' },
 
             ]
           },
           {
-            text: '\u7528\u6237\u6307\u5357',
+            text: '用户指南',
             items: [
-              { text: '\u4ece\u8fd9\u91cc\u5f00\u59cb', link: '/zh/user/' },
-              { text: '\u5ba2\u6237\u7aef\u5b89\u88c5', link: '/zh/user/client_installation' },
-              { text: '\u670d\u52a1\u5668\u5b89\u88c5', link: '/zh/user/server_installation' },
-              { text: '\u914d\u7f6e', link: '/zh/user/configuration' },
-              { text: '\u5e93\u5b58', link: '/zh/user/inventory' },
+              { text: '从这里开始', link: '/zh/user/' },
+              { text: '客户端安装', link: '/zh/user/client_installation' },
+              { text: '服务器安装', link: '/zh/user/server_installation' },
+              { text: '配置', link: '/zh/user/configuration' },
+              { text: 'VAC 与服务器安全', link: '/zh/user/vac-and-security' },
+              { text: '库存', link: '/zh/user/inventory' },
               { text: 'RCON', link: '/zh/user/rcon' },
               { text: '纪念包', link: '/zh/user/souvenirs' },
-              { text: '\u670d\u52a1\u5668\u548c\u5927\u5385', link: '/zh/user/servers' }
+              { text: '服务器和大厅', link: '/zh/user/servers' }
             ]
           },
           {
-            text: '\u5f00\u53d1\u8005\u6307\u5357',
+            text: '开发者指南',
             items: [
-              { text: '\u4ece\u8fd9\u91cc\u5f00\u59cb', link: '/zh/developer/' },
-              { text: '\u6784\u5efa', link: '/zh/developer/building' },
-              { text: '\u67b6\u6784', link: '/zh/developer/architecture' },
-              { text: '\u6e90\u7801\u5730\u56fe', link: '/zh/developer/source-map' },
-              { text: '\u8d21\u732e', link: '/zh/developer/contributing' }
+              { text: '从这里开始', link: '/zh/developer/' },
+              { text: '构建', link: '/zh/developer/building' },
+              { text: '架构', link: '/zh/developer/architecture' },
+              { text: '源码地图', link: '/zh/developer/source-map' },
+              { text: '贡献', link: '/zh/developer/contributing' }
             ]
           }
         ],
@@ -65,21 +66,21 @@ export default defineConfig({
               zh: {
                 translations: {
                   button: {
-                    buttonText: '\u641c\u7d22',
-                    buttonAriaLabel: '\u641c\u7d22'
+                    buttonText: '搜索',
+                    buttonAriaLabel: '搜索'
                   },
                   modal: {
-                    displayDetails: '\u663e\u793a\u8be6\u60c5',
-                    resetButtonTitle: '\u91cd\u7f6e\u641c\u7d22',
-                    backButtonTitle: '\u5173\u95ed\u641c\u7d22',
-                    noResultsText: '\u65e0\u7ed3\u679c',
+                    displayDetails: '显示详情',
+                    resetButtonTitle: '重置搜索',
+                    backButtonTitle: '关闭搜索',
+                    noResultsText: '无结果',
                     footer: {
-                      selectText: '\u9009\u62e9',
-                      selectKeyAriaLabel: '\u56de\u8f66',
-                      navigateText: '\u5207\u6362',
-                      navigateUpKeyAriaLabel: '\u5411\u4e0a',
-                      navigateDownKeyAriaLabel: '\u5411\u4e0b',
-                      closeText: '\u5173\u95ed',
+                      selectText: '选择',
+                      selectKeyAriaLabel: '回车',
+                      navigateText: '切换',
+                      navigateUpKeyAriaLabel: '向上',
+                      navigateDownKeyAriaLabel: '向下',
+                      closeText: '关闭',
                       closeKeyAriaLabel: 'Esc'
                     }
                   }
@@ -115,6 +116,7 @@ export default defineConfig({
           { text: 'Client Installation', link: '/user/client_installation' },
           { text: 'Server Installation', link: '/user/server_installation' },
           { text: 'Configuration', link: '/user/configuration' },
+          { text: 'VAC and Server Security', link: '/user/vac-and-security' },
           { text: 'Inventory', link: '/user/inventory' },
           { text: 'RCON', link: '/user/rcon' },
           { text: 'Souvenir Packages', link: '/user/souvenirs' },
@@ -137,3 +139,4 @@ export default defineConfig({
     ]
   }
 })
+

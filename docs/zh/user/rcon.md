@@ -1,4 +1,4 @@
-# RCON
+﻿# RCON
 
 CSGO-GC 为本地 ClientGC 暴露了一个可选的 Source RCON 兼容控制端口。它面向脚本、调试、GUI 库存编辑器和快速实时库存测试。后期可能会为服务器添加更多实用 RCON 命令。
 
@@ -158,4 +158,4 @@ ERR invalid parameter wear
 
 ## 纪念包参数
 
-`give_item` 还支持 `tournament_event`、`tournament_stage`、`tournament_team0`、`tournament_team1` 和 `tournament_mvp`。属性映射和历史贴纸格式请参阅[纪念包](souvenirs)。
+`give_item` 还支持 `tournament_event`、`tournament_stage`、`tournament_team0`、`tournament_team1` 和 `tournament_mvp`。属性映射和历史贴纸格式请参阅[纪念包](/zh/user/souvenirs)。

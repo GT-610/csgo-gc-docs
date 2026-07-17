@@ -1,4 +1,4 @@
-# 配置
+﻿# 配置
 
 csgo_gc 从以下文件读取配置：
 
@@ -54,7 +54,7 @@ csgo_gc/config.txt
 
 ## RCON
 
-请参阅 [RCON 章节](rcon)。
+请参阅 [RCON 章节](/zh/user/rcon)。
 
 ## 日志
 
@@ -65,3 +65,4 @@ csgo_gc/config.txt
 | `0` | 不输出日志。 |
 | `1` | 输出到游戏内控制台。 |
 | `2` | 输出到游戏内控制台和 `gc_log.txt`。 |
+
