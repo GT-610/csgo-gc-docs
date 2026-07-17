@@ -2,7 +2,7 @@
 
 CSGO-GC 为本地 ClientGC 暴露了一个可选的 Source RCON 兼容控制端口。它面向脚本、调试、GUI 库存编辑器和快速实时库存测试。后期可能会为服务器添加更多实用 RCON 命令。
 
-![alt text](../../user/images/rcon.png)
+![RCON 示例](../../user/images/rcon.png)
 
 ::: warning
 GC 的 RCON 和专用服务器的 RCON（27016 端口） **相互独立**。
@@ -81,6 +81,14 @@ ERR <message>
 | `give_item` | 创建库存物品并发送实时创建更新。 |
 | `remove_item` | 移除物品并发送实时销毁更新。 |
 | `refresh_inventory` | 重新发送完整库存缓存订阅。 |
+| `list_items` | 按稳定物品 ID 排序；默认 50，最大 500。 |
+| `find_item` | 查找精确 ID、defindex、显示名和自定义名。 |
+| `item_info` | 显示物品属性和装备状态。 |
+| `save_inventory` | 将内存中的库存保存到 `csgo_gc/inventory.txt`。 |
+
+较大的响应会包含 `total`、`shown` 和 `truncated`。`truncated=1` 表示单个 Source RCON 响应包达到输出上限；应缩小查询范围，而不是认为库存不完整。
+
+`refresh_inventory` 是修复/调试命令，会重新发送完整库存缓存订阅，不是创建物品的常规路径。
 
 ## 创建物品
 
@@ -147,3 +155,7 @@ ERR invalid parameter wear
 
 目前支持 RCON 编辑的 GUI 编辑器有：
 - [GT-610/csgo-gc-inventory-editor](https://github.com/GT-610/csgo-gc-inventory-editor)
+
+## 纪念包参数
+
+`give_item` 还支持 `tournament_event`、`tournament_stage`、`tournament_team0`、`tournament_team1` 和 `tournament_mvp`。属性映射和历史贴纸格式请参阅[纪念包](souvenirs)。

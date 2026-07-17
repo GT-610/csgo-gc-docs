@@ -2,7 +2,7 @@
 
 CSGO-GC exposes an optional Source RCON-compatible control port for the local ClientGC. It is intended for scripting, debugging, GUI inventory editors, and quick live inventory tests. More useful RCON commands for servers may be added later.
 
-![RCON overview](images/rcon.png)
+![RCON example](images/rcon.png)
 
 ::: warning
 The GC RCON and the Dedicated Server RCON on port `27016` are **independent** of each other.
@@ -81,6 +81,14 @@ ERR <message>
 | `give_item` | Creates inventory items and sends live create updates. |
 | `remove_item` | Removes an item and sends a live destroy update. |
 | `refresh_inventory` | Resends the full inventory cache subscription. |
+| `list_items` | Lists items in stable item-ID order; default 50, maximum 500. |
+| `find_item` | Searches exact IDs, defindexes, display names, and custom names. |
+| `item_info` | Shows item attributes and equipped state. |
+| `save_inventory` | Saves the in-memory inventory to `csgo_gc/inventory.txt`. |
+
+Large responses include `total`, `shown`, and `truncated`. `truncated=1` means the single Source RCON response packet reached its output limit; narrow the query rather than treating the inventory as incomplete.
+
+`refresh_inventory` is a repair/debug command that resends the full cache subscription. It is not the normal path for creating an item.
 
 ## Create items
 
@@ -148,3 +156,7 @@ ERR invalid parameter wear
 GUI editors that currently support RCON editing:
 
 - [GT-610/csgo-gc-inventory-editor](https://github.com/GT-610/csgo-gc-inventory-editor)
+
+## Souvenir parameters
+
+`give_item` also accepts `tournament_event`, `tournament_stage`, `tournament_team0`, `tournament_team1`, and `tournament_mvp`. See [Souvenir Packages](souvenirs) for the attribute mapping and historical sticker formats.

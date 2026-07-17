@@ -43,6 +43,7 @@ export default defineConfig({
               { text: '\u914d\u7f6e', link: '/zh/user/configuration' },
               { text: '\u5e93\u5b58', link: '/zh/user/inventory' },
               { text: 'RCON', link: '/zh/user/rcon' },
+              { text: '纪念包', link: '/zh/user/souvenirs' },
               { text: '\u670d\u52a1\u5668\u548c\u5927\u5385', link: '/zh/user/servers' }
             ]
           },
@@ -116,6 +117,7 @@ export default defineConfig({
           { text: 'Configuration', link: '/user/configuration' },
           { text: 'Inventory', link: '/user/inventory' },
           { text: 'RCON', link: '/user/rcon' },
+          { text: 'Souvenir Packages', link: '/user/souvenirs' },
           { text: 'Servers and Lobbies', link: '/user/servers' }
         ]
       },

@@ -63,12 +63,18 @@ GUI editors that currently support RCON editing:
 
 - [GT-610/csgo-gc-inventory-editor](https://github.com/GT-610/csgo-gc-inventory-editor)
 
-## Store data
+## Store prices and purchase controls
 
-The in-game store reads from:
+The in-game store reads:
 
 ```text
 csgo_gc/price_sheet.txt
 ```
 
-The example price sheet was dumped from a 2022-era data set. It contains store layout, product links, prices, sale prices, and store metadata used by the local GC responses.
+The example price sheet contains the store layout, product links, prices, sale prices, and metadata used by local GC responses.
+
+The file is runtime input; prices are delivered by the local GC. Restart the game after changing it.
+
+If a key entry is missing from the price sheet, Panorama may hide the purchase bar before sending a purchase request. This is a price-sheet data problem, not an inventory or case-opening protocol problem. If an item cannot be purchased because price data is missing, [report an issue](https://github.com/GT-610/csgo-gc/issues/new).
+
+The example file comes from a public multi-currency snapshot dated May 5, 2023. It includes later CS:GO store entries such as Revolution Case, Anubis, and Paris 2023, but is not Valve's original price sheet from before CS:GO was delisted on September 27, 2023.
