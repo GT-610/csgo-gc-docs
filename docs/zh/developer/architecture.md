@@ -27,6 +27,18 @@ InstallGC(bool dedicated)
 
 它会初始化平台层并安装 Steam hook。
 
+## 最终版客户端与 Upstream 兼容性
+
+项目的主要运行目标是 2023 年 9 月最终版旧 CS:GO 客户端。Hook 会保持 `ISteamGameCoordinator` 边界和共有的 CS:GO protobuf 消息格式。当前兼容工作覆盖 client hello/welcome、SOCache 版本协商和刷新、按角色区分的负载变更、默认物品交换，以及游戏内商店结账流程。
+
+与原版 Upstream 的互操作范围限于双方都支持的功能。共有的客户端/服务器消息应能双向正常工作；Fork 独有状态采用附加形式，不理解它的实现应当忽略这些状态，但这不代表双方所有功能完全对等。
+
+商店流程有几个必须保持的顺序要求：
+
+1. 购买初始化会验证所有商品，并占用唯一的活动交易。
+2. Steam 授权回调必须延迟到后续 callback pass，让客户端先保存交易 ID。
+3. Finalize 会先创建并发布库存 SO 对象，再返回成功。部分创建失败时会回滚尚未发布的物品，并清除待处理交易。
+
 ## ClientGC
 
 ClientGC 路径处理大多数玩家可见的 GC 行为：

@@ -2,7 +2,7 @@
 
 csgo_gc 是面向旧版 CS:GO 的本地 Game Coordinator 实现。它会把游戏的 GC 流量重定向到进程内的替代实现，让原本依赖 Valve CS:GO GC 的功能可以在不依赖中心服务器的情况下继续工作。
 
-本 GC 文档适用于 [GT610 的 Fork](https://github.com/GT-610/csgo-gc)。此 Fork 相较于原版有不小改进，考虑到原版已好久没有更新，且此 Fork 活跃开发并 100% 兼容原版，我推荐使用此 Fork。
+本 GC 文档适用于 [GT610 的 Fork](https://github.com/GT-610/csgo-gc)。此 Fork 相较于原版有较多改进，并以 2023 年 9 月最终版旧 CS:GO 客户端为主要兼容目标。它会保持与原版共有客户端/服务器协议功能的互操作性，但 Fork 独有功能不保证在 Upstream 中存在。
 
 ::: warning 项目状态
 csgo_gc 仍在积极开发。目前已接近稳定，但可能还会存在一些问题。安装前请备份游戏文件。

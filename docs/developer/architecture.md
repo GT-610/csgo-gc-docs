@@ -27,6 +27,18 @@ InstallGC(bool dedicated)
 
 This initializes the platform layer and installs the Steam hook.
 
+## Final-client and upstream compatibility
+
+The primary runtime target is the final September 2023 legacy CS:GO client. The hook preserves the `ISteamGameCoordinator` boundary and the shared CS:GO protobuf message formats. Current compatibility work covers client hello/welcome, SOCache version negotiation and refresh, class-specific loadout changes, default-item swaps, and the in-game store checkout flow.
+
+Interoperability with the original upstream project is scoped to features both implementations support. Shared client/server messages should continue to work in either direction. Fork-only state is additive and should be ignored by an implementation that does not understand it, but this is not a guarantee of complete feature parity.
+
+The store flow has several ordering requirements:
+
+1. Purchase initialization validates all line items and reserves the single active transaction.
+2. The Steam authorization callback is delayed until a later callback pass so the client has stored the transaction ID.
+3. Finalization creates and publishes inventory SO objects before returning success. A partial creation failure rolls back unpublished items and clears the pending transaction.
+
 ## ClientGC
 
 The ClientGC path handles most player-facing GC behavior:
