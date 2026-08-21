@@ -51,7 +51,7 @@ The basic structure is:
 
 ![Example inventory check log at GC startup](images/item-check.png)
 
-At startup, the GC checks the inventory format and reports problems in the console. These problems do not prevent you from playing or using the inventory, but adjusting the data based on the logs is still recommended.
+At startup, the GC checks the inventory format and reports problems in the console. These problems do not stop you from playing or using the inventory, but it is still worth cleaning up whatever the logs point at.
 
 ## Live editing
 
@@ -71,9 +71,7 @@ The in-game store reads:
 csgo_gc/price_sheet.txt
 ```
 
-The example price sheet contains the store layout, product links, prices, sale prices, and metadata used by local GC responses.
-
-The file is runtime input; prices are delivered by the local GC. Restart the game after changing it.
+The example price sheet contains the store layout, product links, prices, sale prices, and metadata used by local GC responses. Prices are delivered by the local GC at runtime, so restart the game after changing the file.
 
 Store purchases are simulated locally. They do not charge Steam Wallet funds and do not add items to the official Steam inventory. The local GC accepts one checkout at a time and delivers successful purchases directly to the local SOCache, so the new items should appear without restarting the game.
 

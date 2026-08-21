@@ -28,7 +28,7 @@ Other account presentation options include:
 
 | Option | Purpose |
 | --- | --- |
-| `vac_banned` | Controls whether the in-game “VAC banned” banner is shown. It does not reflect or affect your actual VAC status. |
+| `vac_banned` | Controls whether the in-game "VAC banned" banner is shown. It does not reflect or affect your actual VAC status. |
 | `cmd_friendly` | Commendations for being friendly. |
 | `cmd_teaching` | Commendations for teaching. |
 | `cmd_leader` | Commendations for leading the team. |
@@ -45,11 +45,11 @@ The `rarity_weights` block controls weighted selection for crate-style openings.
 
 `appid_override` controls the app ID used for the game. The default is `4465480`, the app ID of the standalone CS:GO release.
 
-You can also set it to `730` so CS:GO believes it is running under the original app ID, which is now used by CS2. This may allow Workshop subscriptions, but other players will see you as playing CS2.
+You can also set it to `730` so CS:GO believes it is running under the original app ID, which now belongs to CS2. This may allow Workshop subscriptions, but other players will see you as playing CS2.
 
 `show_csgo_gc_servers_only` controls the server browser filter. `1` enables it and `0` disables it.
 
-When enabled, the server browser only shows servers tagged with `csgo_gc` by default. All CSGO-GC-compatible servers include this tag. If a server does not have it, your inventory may not work: it may not be displayed to you or other players, and the buy menu may show your inventory while purchases still result in default equipment instead of your configured equipment.
+When enabled, the browser shows only servers tagged with `csgo_gc` by default. All CSGO-GC-compatible servers carry this tag. On a server without it, your inventory may not work: it may not show up for you or other players, and the buy menu may display your items while purchases still hand out default equipment instead of what you configured.
 
 ## RCON
 

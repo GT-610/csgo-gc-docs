@@ -3,7 +3,7 @@
 ::: danger
 由于本程序通过钩子函数将游戏的 GC 流量重定向到本地，某些杀毒软件（例如*火绒*）会误报为 ShellLoader 或 Trojan 一类的恶意程序。
 
-本项目完全自由且开源，只要你确保你的下载来源是 [我们的 GitHub Release 页面](https://github.com/GT-610/csgo-gc/releases)，我们保证是绝对安全的。
+本项目完全自由且开源。只要你从[我们的 GitHub Release 页面](https://github.com/GT-610/csgo-gc/releases)下载，我们可以保证程序是安全的。
 
 如果你不放心，你也可以自行检索代码库，或者向 AI 询问代码库是否安全，或者自行编译。
 
@@ -23,7 +23,7 @@
 ## 安装 csgo_gc
 
 1. [下载](https://github.com/GT-610/csgo-gc/releases)适合你平台的最新发布包。
-2. 打开服务器程序的目录
+2. 打开服务器程序的目录。
 3. 备份原始启动器可执行文件，例如 `srcds.exe` 或者 `srcds_linux64`。
 4. 将发布包中的 `csgo_gc` 文件夹和对应的启动器可执行文件解压到游戏目录。
 5. 按提示替换文件。

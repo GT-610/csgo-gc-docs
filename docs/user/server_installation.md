@@ -5,7 +5,7 @@ Because this program redirects the game's GC traffic locally through hooks, some
 
 This project is fully free and open source. As long as you make sure your download source is [our GitHub Releases page](https://github.com/GT-610/csgo-gc/releases), we guarantee that the program is safe.
 
-If you are unsure, you can inspect the codebase yourself, ask an AI whether the codebase is safe, or build it yourself.
+If you are unsure, you can inspect the code yourself, ask an AI to review it, or build it from source.
 
 **Do not** download this project from any other source.
 :::
@@ -16,7 +16,7 @@ If you are unsure, you can inspect the codebase yourself, ask an AI whether the 
 
 ## Deploy a CS:GO Dedicated Server
 
-First deploy a working Dedicated Server. There are many existing tutorials, so this documentation does not cover the initial server deployment in detail.
+First deploy a Dedicated Server that works. There are plenty of tutorials for that, so this page does not cover the deployment itself.
 
 ## Install csgo_gc
 

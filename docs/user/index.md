@@ -11,8 +11,8 @@ CSGO-GC includes both a **server launcher** and a **client launcher**. For a pla
 
 ## I am a server operator and want to host a CSGO-GC server
 
-1. Follow [Server Installation](/user/client_installation) to install the GC.
-5. Read [Servers and Lobbies](/user/servers) for more information.
+1. Follow [Server Installation](/user/server_installation) to install the GC.
+2. Read [Servers and Lobbies](/user/servers) for more information.
 
 ## Important warning
 
