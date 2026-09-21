@@ -61,6 +61,18 @@ The ServerGC path handles dedicated-server-facing GC behavior:
 - Music kit MVP state forwarding.
 - Selected kill count propagation.
 
+## Music kit StatTrak
+
+Music kit StatTrak counts round MVPs on an equipped StatTrak music kit and shows the count on the MVP panel through the `musickitmvps` field of the `round_mvp` event.
+
+The official backend advanced this counter on the gameserver and published it. That path is gone: the final `server.dll` no longer computes the value, and the helper that queued the increment has no callers. The game's own machinery cannot supply it, so the project supplies it instead.
+
+When the client observes a local `round_mvp` it increments the counter in its inventory and mirrors it into the event, and it also tells the connected server through `k_EMsgNetworkMusicKitMVPState`. The server tracks the counter from the client's own SO cache messages as well, so a server running this project publishes the value itself. A client connecting to a server without this project still gets the counter locally.
+
+`musickitmvps` is a declared field of `round_mvp` in the game's event definitions, so the stock HUD renders the count with no client-side change.
+
+The feature is gated on a competitive ruleset through `MusicKit::ShouldTrackStatTrak`, evaluated on every publish so a mid-session game mode change is respected. The gate replaces the retired official `IsQueuedMatchmaking` signal, which only matched Valve matchmaking reservation servers. `game_types.cpp` reads the game's own `IGameTypes` interface for the current game type and mode. Gating on the client means the counter is not inflated in modes that never counted, and gating on the server means the event carries no music kit data in those modes.
+
 ## Inventory and schema
 
 `inventory.cpp` owns local inventory state and persistence. It works together with `item_schema.cpp` to interpret defindexes, paint kits, stickers, rarity, quality, crate contents, trade-up candidates, and attribute encoding.

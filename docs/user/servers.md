@@ -12,7 +12,9 @@ We may revisit this later. One possible end state is a free, open-source matchma
 
 ## Item state on servers
 
-The ServerGC path validates and forwards selected client SO cache messages. It also passes StatTrak music kit MVP counts from clients through the server path. This is local-project behavior, not official Valve backend behavior.
+The ServerGC path validates and forwards selected client SO cache messages. The client's own inventory is the authoritative copy of its music kit, so the server tracks the equipped StatTrak music kit counter from those messages and publishes it in the round MVP event. Clients also send their state directly, which keeps both ends agreeing on the count. This is local-project behavior, not official Valve backend behavior.
+
+Music kit StatTrak is gated on a competitive ruleset by default, matching the only scope the official backend ever supported. The gate applies on both sides: the client only advances the counter and only publishes a count in those modes, and the server only injects the count into round MVP events in those modes. See [Configuration](/user/configuration) if you want it in every mode instead.
 
 When you connect to a server and watch the console, you may see logs such as `Sending socache`. That is the GC sending your inventory to the server over Steam P2P.
 

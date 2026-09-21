@@ -41,6 +41,17 @@ Other account presentation options include:
 
 The `rarity_weights` block controls weighted selection for crate-style openings. The example config uses Valve-like weights.
 
+`music_kit_stattrak` controls when StatTrak music kits count round MVPs and show the count on the MVP panel:
+
+| Value | Behavior |
+| --- | --- |
+| `competitive` | Only in a competitive ruleset. This is the default. |
+| `always` | In every game type and mode. |
+
+The default matches the scope the official backend supported: it only ever counted on official matchmaking servers, which ran competitive rules. A competitive ruleset means the classic game type with competitive, Wingman, or 5v5/2v2 scrimmage mode, so community and local competitive servers count too. Casual, Deathmatch, Arms Race, and the other game types do not.
+
+The game mode is read from the server you are connected to, so this works on any server without that server needing its own configuration. Set it to `always` if you want the counter in casual-style modes as well.
+
 ## Steam and server browser
 
 `appid_override` controls the app ID used for the game. The default is `4465480`, the app ID of the standalone CS:GO release.
