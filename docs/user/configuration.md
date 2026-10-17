@@ -76,3 +76,9 @@ See the [RCON section](/user/rcon).
 | `1` | Log to the in-game console. |
 | `2` | Log to the in-game console and `gc_log.txt`. |
 
+## Item schema path
+
+`item_schema_path` sets where the item schema is read from. The default is `csgo/scripts/items/items_game.txt`, which is the file the game itself loads, so item definitions and crate contents match the running client.
+
+Only change it when your install keeps the schema somewhere else. If the file cannot be read, the GC has no item metadata: containers open with fallback contents, paint kits and stickers lose their names and rarities, and trade-up eligibility cannot be decided.
+
