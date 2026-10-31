@@ -1,4 +1,4 @@
-﻿# 配置
+# 配置
 
 csgo_gc 从以下文件读取配置：
 
@@ -82,4 +82,10 @@ csgo_gc/config.txt
 `item_schema_path` 指定物品 schema 的读取位置，默认为 `csgo/scripts/items/items_game.txt`。这个文件就是游戏自己加载的那一份，因此物品定义和箱子内容会与当前客户端保持一致。
 
 只有当你安装目录里的 schema 放在别处时才需要修改它。如果该文件读取失败，GC 就没有物品元数据：开箱会按兜底内容产出，涂装和贴纸会失去名称与稀有度，汰换资格也无法判定。
+
+## Panorama 前端包
+
+`allow_unsigned_panorama` 允许客户端加载签名不匹配的 Panorama 前端包（`csgo/panorama/code.pbin`）。默认值为 `0`，设为 `1` 启用。该选项只影响客户端。
+
+它的用途是让恢复了匹配入口的重打包前端能够加载，本身并不会让匹配功能可用。完整流程、该选项改了什么以及它的限制见[匹配界面](/zh/user/matchmaking-ui)。
 

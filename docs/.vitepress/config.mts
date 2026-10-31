@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'en-US',
@@ -45,7 +45,8 @@ export default defineConfig({
               { text: '库存', link: '/zh/user/inventory' },
               { text: 'RCON', link: '/zh/user/rcon' },
               { text: '纪念包', link: '/zh/user/souvenirs' },
-              { text: '服务器和大厅', link: '/zh/user/servers' }
+              { text: '服务器和大厅', link: '/zh/user/servers' },
+              { text: '匹配界面', link: '/zh/user/matchmaking-ui' }
             ]
           },
           {
@@ -120,7 +121,8 @@ export default defineConfig({
           { text: 'Inventory', link: '/user/inventory' },
           { text: 'RCON', link: '/user/rcon' },
           { text: 'Souvenir Packages', link: '/user/souvenirs' },
-          { text: 'Servers and Lobbies', link: '/user/servers' }
+          { text: 'Servers and Lobbies', link: '/user/servers' },
+          { text: 'Matchmaking UI', link: '/user/matchmaking-ui' }
         ]
       },
       {

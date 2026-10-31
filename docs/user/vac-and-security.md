@@ -1,4 +1,4 @@
-﻿# VAC and server security
+# VAC and server security
 
 This page describes what can currently be verified about CSGO-GC's security boundary. It says nothing about future Valve enforcement or third-party server policies. We also **accept no responsibility for losses caused by improper use**.
 
@@ -7,6 +7,15 @@ This page describes what can currently be verified about CSGO-GC's security boun
 The client launcher loads CSGO-GC into the game process and hooks the Steam and Game Coordinator interfaces to restore missing GC behavior locally. Antivirus software may flag it as a false positive. CSGO-GC is not a read-only data patch.
 
 CSGO-GC servers do not enable VAC. The GC server path clears the Steam server `secure` flag. Not every community server disables VAC, but every CSGO-GC server disables VAC.
+
+### Panorama frontend patching
+
+With `allow_unsigned_panorama` enabled, CSGO-GC also modifies the already-loaded `panorama` module in memory so that it accepts a Panorama frontend package whose signature does not verify. Two details matter for the security boundary:
+
+- it changes a single conditional branch in the module's executable code, not files on disk;
+- the change is limited to the integrity check for `csgo/panorama/code.pbin`, and it affects only the frontend's own asset loading.
+
+This does not touch gameplay, player entities, aiming, networking or VAC. It is the same kind of in-process code modification the project already performs when it hooks Steam and GC interfaces, which is why the existing caveats on this page apply unchanged. See [Matchmaking UI](/user/matchmaking-ui) for the option itself.
 
 ## What the project does not change
 

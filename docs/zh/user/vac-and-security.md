@@ -8,6 +8,15 @@
 
 CSGO-GC 服务器不会启用 VAC。GC 服务器路径会清除 Steam 服务器的 `secure` 标志。也就是说，不是所有社区服务器都会禁用 VAC，但所有 CSGO-GC 服务器都会禁用 VAC。
 
+### Panorama 前端补丁
+
+启用 `allow_unsigned_panorama` 后，CSGO-GC 还会在内存中修改已加载的 `panorama` 模块，使其接受签名不匹配的 Panorama 前端包。有两点与安全边界相关：
+
+- 它改的是该模块可执行代码中的一个条件跳转，不是磁盘上的文件；
+- 改动仅限于 `csgo/panorama/code.pbin` 的完整性校验，只影响前端自身的资源加载。
+
+它不会触及游戏逻辑、玩家实体、瞄准、网络或 VAC。这与项目在 hook Steam 和 GC 接口时所做的进程内代码修改属于同一性质，因此本页已有的说明同样适用。该选项本身见[匹配界面](/zh/user/matchmaking-ui)。
+
 ## 项目不修改什么
 
 从 `steam_hook.cpp` 看，项目没有接管 VAC/Steam 身份认证：
