@@ -66,6 +66,19 @@ When enabled, the browser shows only servers tagged with `csgo_gc` by default. A
 
 See the [RCON section](/user/rcon).
 
+## GC Matchmaking
+
+GCMM is disabled by default and is independent of RCON. Enable it explicitly when using the native community matchmaking flow:
+
+```vdf
+"gcmm"
+{
+    "enabled" "0"
+}
+```
+
+Set `enabled` to `1` on each participating client and the configured dedicated server, then restart the processes. See [GC Matchmaking (GCMM)](/user/gcmm) and [Matchmaking UI](/user/matchmaking-ui) for the coordinator and client flow.
+
 ## Logging
 
 `log_output` controls diagnostic output:

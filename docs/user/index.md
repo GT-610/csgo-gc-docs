@@ -8,6 +8,7 @@ CSGO-GC includes both a **server launcher** and a **client launcher**. For a pla
 2. Review [Configuration](/user/configuration), especially the `appid_override`, logging, and RCON settings.
 3. Learn how inventory data works in [Inventory](/user/inventory).
 4. Use [RCON](/user/rcon) only when you need live item changes or external tooling.
+5. For community matchmaking with native ACCEPT and automatic server joining, follow [GC Matchmaking (GCMM)](/user/gcmm).
 
 ## I am a server operator and want to host a CSGO-GC server
 

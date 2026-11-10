@@ -67,6 +67,19 @@ csgo_gc/config.txt
 
 请参阅 [RCON 章节](/zh/user/rcon)。
 
+## GC Matchmaking
+
+GCMM 默认关闭，并且与 RCON 独立。使用原生社区匹配流程时，请显式启用：
+
+```vdf
+"gcmm"
+{
+    "enabled" "0"
+}
+```
+
+在每个参与客户端和已配置的专用服务器上把 `enabled` 设为 `1`，然后重启对应进程。协调器和客户端流程见 [GC Matchmaking（GCMM）](/zh/user/gcmm) 及 [匹配界面](/zh/user/matchmaking-ui)。
+
 ## 日志
 
 `log_output` 控制诊断输出：

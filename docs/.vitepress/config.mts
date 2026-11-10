@@ -46,7 +46,8 @@ export default defineConfig({
               { text: 'RCON', link: '/zh/user/rcon' },
               { text: '纪念包', link: '/zh/user/souvenirs' },
               { text: '服务器和大厅', link: '/zh/user/servers' },
-              { text: '匹配界面', link: '/zh/user/matchmaking-ui' }
+              { text: '匹配界面', link: '/zh/user/matchmaking-ui' },
+              { text: 'GC Matchmaking（GCMM）', link: '/zh/user/gcmm' }
             ]
           },
           {
@@ -56,7 +57,8 @@ export default defineConfig({
               { text: '构建', link: '/zh/developer/building' },
               { text: '架构', link: '/zh/developer/architecture' },
               { text: '源码地图', link: '/zh/developer/source-map' },
-              { text: '贡献', link: '/zh/developer/contributing' }
+              { text: '贡献', link: '/zh/developer/contributing' },
+              { text: 'GCMM 开发者协议', link: '/zh/developer/gcmm-protocol' }
             ]
           }
         ],
@@ -122,7 +124,8 @@ export default defineConfig({
           { text: 'RCON', link: '/user/rcon' },
           { text: 'Souvenir Packages', link: '/user/souvenirs' },
           { text: 'Servers and Lobbies', link: '/user/servers' },
-          { text: 'Matchmaking UI', link: '/user/matchmaking-ui' }
+          { text: 'Matchmaking UI', link: '/user/matchmaking-ui' },
+          { text: 'GC Matchmaking (GCMM)', link: '/user/gcmm' }
         ]
       },
       {
@@ -132,7 +135,8 @@ export default defineConfig({
           { text: 'Building', link: '/developer/building' },
           { text: 'Architecture', link: '/developer/architecture' },
           { text: 'Source Map', link: '/developer/source-map' },
-          { text: 'Contributing', link: '/developer/contributing' }
+          { text: 'Contributing', link: '/developer/contributing' },
+          { text: 'GCMM Protocol', link: '/developer/gcmm-protocol' }
         ]
       }
     ],
@@ -141,4 +145,3 @@ export default defineConfig({
     ]
   }
 })
-

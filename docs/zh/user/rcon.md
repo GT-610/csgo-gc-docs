@@ -1,4 +1,4 @@
-﻿# RCON
+# RCON
 
 CSGO-GC 为本地 ClientGC 暴露了一个可选的 Source RCON 兼容控制端口。它面向脚本、调试、GUI 库存编辑器和快速实时库存测试。后期可能会为服务器添加更多实用 RCON 命令。
 
@@ -31,6 +31,8 @@ RCON 默认关闭。
 
 如果配置中的密码为空，出于 Source RCON 客户端兼容性考虑，**任何传入密码都会通过认证**。
 :::
+
+GCMM 使用已认证 RCON 作为本地控制平面。请在[配置](/zh/user/configuration)中单独启用 GCMM，并按 [GC Matchmaking（GCMM）](/zh/user/gcmm) 配置服务器、客户端和命令。
 
 ## 协议
 

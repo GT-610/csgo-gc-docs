@@ -1,4 +1,4 @@
-﻿# RCON
+# RCON
 
 CSGO-GC exposes an optional Source RCON-compatible control port for the local ClientGC. It is intended for scripting, debugging, GUI inventory editors, and quick live inventory tests. More useful RCON commands for servers may be added later.
 
@@ -31,6 +31,8 @@ Keep RCON on `127.0.0.1` unless you have added your own network protection. RCON
 
 If the configured password is empty, **any supplied password will be accepted** for compatibility with Source RCON clients.
 :::
+
+GCMM uses authenticated RCON as its local control plane. Enable GCMM separately in [Configuration](/user/configuration), then follow [GC Matchmaking (GCMM)](/user/gcmm) for the server and client commands.
 
 ## Protocol
 

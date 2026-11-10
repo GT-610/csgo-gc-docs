@@ -8,6 +8,7 @@ CSGO-GC 包含**服务器启动器**和**客户端启动器**。如果要让玩�
 2. 查看[配置](/zh/user/configuration)，尤其是 `appid_override`、日志和 RCON 设置。
 3. 通过[库存](/zh/user/inventory)了解库存数据的工作方式。
 4. 只有在需要实时物品变更或外部工具接入时，再使用 [RCON](/zh/user/rcon)。
+5. 如需通过原生 ACCEPT 和自动加入服务器运行社区匹配，请阅读 [GC Matchmaking（GCMM）](/zh/user/gcmm)。
 
 ## 我是服务器管理员，想搭建带 CSGO-GC 功能的服务器
 

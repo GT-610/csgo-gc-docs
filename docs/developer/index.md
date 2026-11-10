@@ -14,7 +14,8 @@ The codebase is mostly C++17 with CMake, Steamworks SDK headers and redistributa
 2. [Architecture](/developer/architecture)
 3. [Source Map](/developer/source-map)
 4. [Contributing](/developer/contributing)
+5. [GCMM Protocol](/developer/gcmm-protocol)
 
 ## Research boundaries
 
-This project is useful for studying legacy CS:GO GC messages, inventory behavior, local SO cache updates, store responses, and Steam P2P-based coordination. It is not a matchmaking backend and should not be treated as one.
+This project is useful for studying legacy CS:GO GC messages, inventory behavior, local SO cache updates, store responses, and Steam P2P-based coordination. Its GCMM profile adds authenticated RCON control for a native community matchmaking flow with an external coordinator; it does not restore the official Valve matchmaking queue. See the [GCMM Protocol](/developer/gcmm-protocol) for the contract.

@@ -14,7 +14,8 @@ csgo_gc 不是一个独立的 Web 服务。它被加载到游戏进程中，hook
 2. [架构](/zh/developer/architecture)
 3. [源码地图](/zh/developer/source-map)
 4. [贡献](/zh/developer/contributing)
+5. [GCMM 开发者协议](/zh/developer/gcmm-protocol)
 
 ## 研究边界
 
-这个项目适合研究旧版 CS:GO GC 消息、库存行为、本地 SO cache 更新、商店响应，以及基于 Steam P2P 的协作方式。它不是匹配后端，也不应被当作匹配后端。
+这个项目适合研究旧版 CS:GO GC 消息、库存行为、本地 SO cache 更新、商店响应，以及基于 Steam P2P 的协作方式。GCMM profile 通过已认证 RCON 和外部协调器提供原生社区匹配控制流程；它不会恢复官方 Valve 匹配队列。协议契约见 [GCMM 开发者协议](/zh/developer/gcmm-protocol)。

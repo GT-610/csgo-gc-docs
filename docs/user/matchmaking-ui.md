@@ -2,7 +2,7 @@
 
 This page explains how to make the official Matchmaking screens appear in the legacy client, and what does and does not work once they are visible.
 
-**Matchmaking itself does not work.** The screens are a way to inspect what the client sends, not a way to find a game. Read [What this does not do](#what-this-does-not-do) before enabling anything.
+Restoring the entry restores the matchmaking UI only. With GCMM and an external coordinator, a community setup can run the native ACCEPT flow: real players receive the dialog, click it manually, and the client can autojoin the configured community server. The official Valve matchmaking queue is not restored.
 
 ## Why the screens are missing
 
@@ -72,15 +72,14 @@ The console and `gc_log.txt` report whether the patch applied:
 
 If instead you still get `Resource panorama/code.pbin has invalid data.`, the patch did not apply. Check that `allow_unsigned_panorama` is set, that the client was fully restarted, and that the log shows the first message above.
 
-## What this does not do
+## What this does and does not do
 
-Queueing does not work. Finding a match needs a central matchmaking service that assigns players to a server, and no such service exists for the legacy client. Expect to reach the search screen and stop there.
+The UI package alone restores the entry point. It does not create a queue or assign a server. GCMM and an external coordinator add a community matchmaking path: the coordinator prepares real searching clients and a configured native server, players receive the native ACCEPT dialog and click it themselves, and the client can autojoin that community server. See [GC Matchmaking (GCMM)](/user/gcmm) for the supported flow.
 
-Specifically, these do not work:
+The official Valve matchmaking queue is not restored. These official services remain unavailable:
 
 - searching for and joining an official match;
-- matchmaking cooldowns, ranks and eligibility checks;
-- accepting a match and reserving a server.
+- matchmaking cooldowns, ranks and eligibility checks.
 
 Lobbies, the server browser and playing on a dedicated server are unaffected and do not need this option. Those are covered in [Servers and Lobbies](/user/servers).
 
