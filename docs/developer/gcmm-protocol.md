@@ -175,6 +175,10 @@ than about two seconds is reported as `stale:true` with `active:false` and
 `all_accepted:false`, because a cached `net_time`/`expiry` comparison no longer
 proves the reservation is alive. `sample_age_ms` is `-1` before the first
 sample. A coordinator must reject a stale status rather than commit from it.
+Cleanup is the one exception: within its preparation timeout it must keep
+reading a paused server instead of aborting, because a reserve that was only
+acknowledged can still apply once sampling resumes, and only a fresh read can
+prove which owner the release has to name.
 
 When disabled or unsupported, discovery must still clearly report protocol, role, enabled and initialization/error state. Mutation commands must reject.
 
