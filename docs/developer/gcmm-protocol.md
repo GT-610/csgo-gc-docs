@@ -163,9 +163,18 @@ gcmm_release reservationid=N match_id=N
   "matches_request": true,
   "active": true,
   "all_accepted": true,
+  "stale": false,
+  "sample_age_ms": 37,
   "roster": [{ "account_id": 305419896, "stage": 2 }]
 }
 ```
+
+`stale` and `sample_age_ms` describe the freshness of the snapshot these fields
+come from. The adapter samples the engine roughly every 100 ms; a snapshot older
+than about two seconds is reported as `stale:true` with `active:false` and
+`all_accepted:false`, because a cached `net_time`/`expiry` comparison no longer
+proves the reservation is alive. `sample_age_ms` is `-1` before the first
+sample. A coordinator must reject a stale status rather than commit from it.
 
 When disabled or unsupported, discovery must still clearly report protocol, role, enabled and initialization/error state. Mutation commands must reject.
 

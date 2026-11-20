@@ -163,9 +163,13 @@ gcmm_release reservationid=N match_id=N
   "matches_request": true,
   "active": true,
   "all_accepted": true,
+  "stale": false,
+  "sample_age_ms": 37,
   "roster": [{ "account_id": 305419896, "stage": 2 }]
 }
 ```
+
+`stale` 和 `sample_age_ms` 表示这些字段所来自快照的新鲜度。适配器约每 100 毫秒采样一次引擎；超过约两秒的快照会报告 `stale:true`，同时 `active:false` 和 `all_accepted:false`，因为缓存的 `net_time`/`expiry` 比较已不能证明预约仍然有效。首次采样前 `sample_age_ms` 为 `-1`。协调器必须拒绝过期状态，不能据此提交。
 
 禁用或不支持时，发现命令仍应清楚报告 protocol、role、enabled 和初始化/错误状态；变更命令必须拒绝。
 
